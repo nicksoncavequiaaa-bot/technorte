@@ -1,0 +1,1646 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="TechNorte 2026 - Encontro Acadêmico de Tecnologia e Inovação"
+    >
+
+    <title>TechNorte 2026 | Tecnologia e Inovação</title>
+
+    <style>
+        /* =========================================================
+           CONFIGURAÇÕES GERAIS
+        ========================================================= */
+
+        :root {
+            --cor-principal: #00d084;
+            --cor-principal-escura: #00a86b;
+            --cor-fundo: #07110d;
+            --cor-fundo-secundaria: #0c1813;
+            --cor-card: #101f18;
+            --cor-card-hover: #15291f;
+            --cor-texto: #f4f7f5;
+            --cor-texto-secundario: #a8b5ae;
+            --cor-borda: #20372c;
+            --cor-branca: #ffffff;
+            --sombra: 0 20px 50px rgba(0, 0, 0, 0.25);
+            --raio: 18px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        ul,
+        ol {
+            padding-left: 20px;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            max-width: 720px;
+            margin-bottom: 45px;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--cor-principal);
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            color: var(--cor-texto-secundario);
+            font-size: 1.05rem;
+        }
+
+        /* =========================================================
+           HEADER E NAVEGAÇÃO
+        ========================================================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(7, 17, 13, 0.94);
+            border-bottom: 1px solid var(--cor-borda);
+            backdrop-filter: blur(12px);
+        }
+
+        .nav-container {
+            min-height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--cor-principal);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            padding: 0;
+        }
+
+        nav a {
+            color: var(--cor-texto-secundario);
+            font-size: 0.92rem;
+            transition: 0.25s;
+        }
+
+        nav a:hover {
+            color: var(--cor-principal);
+        }
+
+        .nav-button {
+            padding: 10px 17px;
+            border: 1px solid var(--cor-principal);
+            border-radius: 8px;
+            color: var(--cor-principal);
+        }
+
+        .nav-button:hover {
+            background: var(--cor-principal);
+            color: #06100b;
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 80% 30%,
+                    rgba(0, 208, 132, 0.15),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #07110d 0%,
+                    #0a1711 55%,
+                    #07110d 100%
+                );
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            right: -180px;
+            top: 80px;
+            border: 1px solid rgba(0, 208, 132, 0.15);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            right: -100px;
+            top: 155px;
+            border: 1px solid rgba(0, 208, 132, 0.12);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 13px;
+            border: 1px solid rgba(0, 208, 132, 0.3);
+            border-radius: 50px;
+            background: rgba(0, 208, 132, 0.06);
+            color: var(--cor-principal);
+            font-size: 0.82rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .tag::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            background: var(--cor-principal);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 6rem);
+            line-height: 0.95;
+            letter-spacing: -4px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            color: var(--cor-principal);
+        }
+
+        .hero-description {
+            max-width: 620px;
+            color: var(--cor-texto-secundario);
+            font-size: 1.15rem;
+            margin-bottom: 35px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 9px;
+            font-weight: bold;
+            transition: 0.25s;
+        }
+
+        .button-primary {
+            background: var(--cor-principal);
+            color: #06100b;
+        }
+
+        .button-primary:hover {
+            background: #19e596;
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            border: 1px solid var(--cor-borda);
+            color: var(--cor-texto);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .button-secondary:hover {
+            border-color: var(--cor-principal);
+            color: var(--cor-principal);
+        }
+
+        /* =========================================================
+           INFORMAÇÕES DO EVENTO
+        ========================================================= */
+
+        .event-info {
+            margin-top: -45px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: var(--cor-card);
+            border: 1px solid var(--cor-borda);
+            border-radius: var(--raio);
+            overflow: hidden;
+            box-shadow: var(--sombra);
+        }
+
+        .info-item {
+            padding: 28px;
+            border-right: 1px solid var(--cor-borda);
+        }
+
+        .info-item:last-child {
+            border-right: none;
+        }
+
+        .info-item strong {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .info-item span {
+            color: var(--cor-texto-secundario);
+            font-size: 0.9rem;
+        }
+
+        /* =========================================================
+           SOBRE
+        ========================================================= */
+
+        .about {
+            background: var(--cor-fundo-secundaria);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--cor-texto-secundario);
+            margin-bottom: 20px;
+        }
+
+        .about-list {
+            margin-top: 25px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .about-list li::marker {
+            color: var(--cor-principal);
+        }
+
+        .details-card {
+            background: var(--cor-card);
+            border: 1px solid var(--cor-borda);
+            border-radius: var(--raio);
+            padding: 30px;
+        }
+
+        .details-card h3 {
+            margin-bottom: 20px;
+        }
+
+        .details-card dl {
+            display: grid;
+            gap: 18px;
+        }
+
+        .details-card dt {
+            color: var(--cor-principal);
+            font-size: 0.82rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .details-card dd {
+            color: var(--cor-texto-secundario);
+            margin-top: 3px;
+        }
+
+        /* =========================================================
+           PROGRAMAÇÃO
+        ========================================================= */
+
+        .schedule-wrapper {
+            overflow-x: auto;
+            border: 1px solid var(--cor-borda);
+            border-radius: var(--raio);
+            background: var(--cor-card);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 720px;
+        }
+
+        caption {
+            text-align: left;
+            padding: 20px 24px;
+            font-weight: bold;
+            color: var(--cor-principal);
+        }
+
+        th,
+        td {
+            padding: 17px 20px;
+            text-align: left;
+            border-top: 1px solid var(--cor-borda);
+        }
+
+        th {
+            color: var(--cor-texto);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        td {
+            color: var(--cor-texto-secundario);
+        }
+
+        tbody tr {
+            transition: 0.2s;
+        }
+
+        tbody tr:hover {
+            background: var(--cor-card-hover);
+        }
+
+        .time {
+            color: var(--cor-principal);
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        /* =========================================================
+           PALESTRANTES
+        ========================================================= */
+
+        .speakers {
+            background: var(--cor-fundo-secundaria);
+        }
+
+        .speaker-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .speaker-card {
+            background: var(--cor-card);
+            border: 1px solid var(--cor-borda);
+            border-radius: var(--raio);
+            padding: 25px;
+            transition: 0.25s;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 208, 132, 0.5);
+        }
+
+        .speaker-photo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(
+                135deg,
+                var(--cor-principal),
+                #126c4b
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #06100b;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .speaker-card h3 {
+            margin-bottom: 5px;
+        }
+
+        .speaker-role {
+            color: var(--cor-principal);
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+        }
+
+        .speaker-card p {
+            color: var(--cor-texto-secundario);
+            font-size: 0.92rem;
+        }
+
+        /* =========================================================
+           INSCRIÇÃO
+        ========================================================= */
+
+        .registration-grid {
+            display: grid;
+            grid-template-columns: 0.75fr 1.25fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .registration-info p {
+            color: var(--cor-texto-secundario);
+            margin-bottom: 25px;
+        }
+
+        .benefits {
+            display: grid;
+            gap: 12px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefits li {
+            padding: 13px 15px;
+            background: var(--cor-card);
+            border: 1px solid var(--cor-borda);
+            border-radius: 10px;
+            color: var(--cor-texto-secundario);
+        }
+
+        .benefits li::before {
+            content: "✓";
+            color: var(--cor-principal);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        form {
+            background: var(--cor-card);
+            border: 1px solid var(--cor-borda);
+            border-radius: var(--raio);
+            padding: 32px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-size: 0.88rem;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            border: 1px solid var(--cor-borda);
+            border-radius: 8px;
+            padding: 12px 13px;
+            background: #08130e;
+            color: var(--cor-texto);
+            font: inherit;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--cor-principal);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Seletor de atributo */
+        input[type="email"] {
+            border-left: 3px solid var(--cor-principal);
+        }
+
+        input[required],
+        select[required] {
+            background-image: linear-gradient(
+                to right,
+                rgba(0, 208, 132, 0.03),
+                transparent
+            );
+        }
+
+        .checkbox-group {
+            grid-column: 1 / -1;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            color: var(--cor-texto-secundario);
+            font-size: 0.85rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-top: 4px;
+            accent-color: var(--cor-principal);
+        }
+
+        .form-submit {
+            grid-column: 1 / -1;
+            margin-top: 5px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font: inherit;
+        }
+
+        /* =========================================================
+           CONTATO
+        ========================================================= */
+
+        .contact {
+            background: var(--cor-fundo-secundaria);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .contact-card {
+            padding: 28px;
+            background: var(--cor-card);
+            border: 1px solid var(--cor-borda);
+            border-radius: var(--raio);
+        }
+
+        .contact-card strong {
+            display: block;
+            color: var(--cor-principal);
+            margin-bottom: 8px;
+        }
+
+        .contact-card span {
+            color: var(--cor-texto-secundario);
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 30px 0;
+            border-top: 1px solid var(--cor-borda);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-content p {
+            color: var(--cor-texto-secundario);
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: var(--cor-texto-secundario);
+            font-size: 0.85rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--cor-principal);
+        }
+
+        /* =========================================================
+           RESPONSIVIDADE
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            nav ul {
+                gap: 14px;
+            }
+
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .info-item:nth-child(3),
+            .info-item:nth-child(4) {
+                border-top: 1px solid var(--cor-borda);
+            }
+
+            .about-grid,
+            .registration-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .speaker-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .nav-container {
+                min-height: auto;
+                padding: 15px 0;
+                flex-direction: column;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 650px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-item {
+                border-right: none;
+                border-bottom: 1px solid var(--cor-borda);
+            }
+
+            .info-item:last-child {
+                border-bottom: none;
+            }
+
+            .info-item:nth-child(3),
+            .info-item:nth-child(4) {
+                border-top: none;
+            }
+
+            .speaker-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full,
+            .checkbox-group,
+            .form-submit {
+                grid-column: auto;
+            }
+
+            form {
+                padding: 22px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         CABEÇALHO
+    ========================================================== -->
+
+    <header>
+        <div class="container nav-container">
+
+            <a href="#inicio" class="logo">
+                Tech<span>Norte</span>
+            </a>
+
+            <nav aria-label="Navegação principal">
+                <ul>
+                    <li>
+                        <a href="#inicio">Início</a>
+                    </li>
+
+                    <li>
+                        <a href="#sobre">Sobre</a>
+                    </li>
+
+                    <li>
+                        <a href="#programacao">Programação</a>
+                    </li>
+
+                    <li>
+                        <a href="#palestrantes">Palestrantes</a>
+                    </li>
+
+                    <li>
+                        <a href="#inscricao" class="nav-button">
+                            Inscreva-se
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- =====================================================
+             INÍCIO
+        ====================================================== -->
+
+        <section id="inicio" class="hero">
+
+            <div class="container hero-content">
+
+                <span class="tag">
+                    Evento acadêmico • 2026
+                </span>
+
+                <h1>
+                    Tecnologia que<br>
+                    <span>transforma.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Um encontro acadêmico dedicado à tecnologia,
+                    inovação, desenvolvimento de software e às novas
+                    possibilidades para o futuro da sociedade.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a
+                        href="#inscricao"
+                        class="button button-primary"
+                    >
+                        Quero participar
+                    </a>
+
+                    <a
+                        href="#programacao"
+                        class="button button-secondary"
+                    >
+                        Ver programação
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             INFORMAÇÕES RÁPIDAS
+        ====================================================== -->
+
+        <section class="event-info">
+
+            <div class="container">
+
+                <div class="info-grid">
+
+                    <div class="info-item">
+                        <strong>15–17 Setembro</strong>
+                        <span>2026</span>
+                    </div>
+
+                    <div class="info-item">
+                        <strong>UNEMAT</strong>
+                        <span>Campus universitário</span>
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Presencial</strong>
+                        <span>Participação gratuita</span>
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Certificado</strong>
+                        <span>Para participantes</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SOBRE O EVENTO
+        ====================================================== -->
+
+        <section id="sobre" class="section about">
+
+            <div class="container">
+
+                <div class="about-grid">
+
+                    <article class="about-text">
+
+                        <div class="section-header">
+
+                            <span class="section-label">
+                                Sobre o evento
+                            </span>
+
+                            <h2 class="section-title">
+                                Conhecimento além da sala de aula.
+                            </h2>
+
+                            <p class="section-description">
+                                O TechNorte aproxima estudantes,
+                                professores e profissionais para
+                                compartilhar experiências sobre o
+                                desenvolvimento tecnológico.
+                            </p>
+
+                        </div>
+
+                        <p>
+                            O evento foi pensado como um espaço de
+                            integração entre universidade, mercado
+                            e comunidade, permitindo que os
+                            participantes conheçam diferentes áreas
+                            da tecnologia.
+                        </p>
+
+                        <p>
+                            Durante três dias serão realizadas
+                            palestras, apresentações e momentos de
+                            troca de conhecimento sobre programação,
+                            inteligência artificial, segurança e
+                            inovação.
+                        </p>
+
+                        <ul class="about-list">
+                            <li>Desenvolvimento Web</li>
+                            <li>Inteligência Artificial</li>
+                            <li>Segurança da Informação</li>
+                            <li>Inovação e empreendedorismo</li>
+                        </ul>
+
+                    </article>
+
+
+                    <aside class="details-card">
+
+                        <h3>
+                            Informações do evento
+                        </h3>
+
+                        <dl>
+
+                            <div>
+                                <dt>Data</dt>
+                                <dd>
+                                    15 a 17 de setembro de 2026
+                                </dd>
+                            </div>
+
+                            <div>
+                                <dt>Local</dt>
+                                <dd>
+                                    Universidade do Estado de
+                                    Mato Grosso
+                                </dd>
+                            </div>
+
+                            <div>
+                                <dt>Público</dt>
+                                <dd>
+                                    Estudantes, professores e
+                                    profissionais de tecnologia
+                                </dd>
+                            </div>
+
+                            <div>
+                                <dt>Inscrição</dt>
+                                <dd>
+                                    Gratuita mediante cadastro
+                                </dd>
+                            </div>
+
+                        </dl>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROGRAMAÇÃO
+        ====================================================== -->
+
+        <section id="programacao" class="section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-label">
+                        Programação
+                    </span>
+
+                    <h2 class="section-title">
+                        Três dias de tecnologia.
+                    </h2>
+
+                    <p class="section-description">
+                        Confira alguns dos principais momentos
+                        programados para o evento.
+                    </p>
+
+                </div>
+
+
+                <div class="schedule-wrapper">
+
+                    <table>
+
+                        <caption>
+                            Programação do TechNorte 2026
+                        </caption>
+
+                        <thead>
+
+                            <tr>
+                                <th scope="col">Horário</th>
+                                <th scope="col">Atividade</th>
+                                <th scope="col">Local</th>
+                                <th scope="col">Categoria</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td class="time">
+                                    08:00
+                                </td>
+
+                                <td>
+                                    Credenciamento
+                                </td>
+
+                                <td>
+                                    Hall principal
+                                </td>
+
+                                <td>
+                                    Recepção
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="time">
+                                    09:00
+                                </td>
+
+                                <td>
+                                    Abertura do evento
+                                </td>
+
+                                <td>
+                                    Auditório
+                                </td>
+
+                                <td>
+                                    Cerimônia
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="time">
+                                    10:00
+                                </td>
+
+                                <td>
+                                    Desenvolvimento Web
+                                </td>
+
+                                <td>
+                                    Auditório
+                                </td>
+
+                                <td>
+                                    Palestra
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="time">
+                                    14:00
+                                </td>
+
+                                <td>
+                                    Inteligência Artificial
+                                </td>
+
+                                <td>
+                                    Laboratório 01
+                                </td>
+
+                                <td>
+                                    Workshop
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="time">
+                                    16:00
+                                </td>
+
+                                <td>
+                                    Segurança da Informação
+                                </td>
+
+                                <td>
+                                    Auditório
+                                </td>
+
+                                <td>
+                                    Palestra
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="time">
+                                    19:00
+                                </td>
+
+                                <td>
+                                    Encerramento e networking
+                                </td>
+
+                                <td>
+                                    Espaço de convivência
+                                </td>
+
+                                <td>
+                                    Networking
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PALESTRANTES
+        ====================================================== -->
+
+        <section id="palestrantes" class="section speakers">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-label">
+                        Convidados
+                    </span>
+
+                    <h2 class="section-title">
+                        Quem vai compartilhar conhecimento.
+                    </h2>
+
+                    <p class="section-description">
+                        Profissionais e pesquisadores convidados
+                        para discutir diferentes áreas da tecnologia.
+                    </p>
+
+                </div>
+
+
+                <div class="speaker-grid">
+
+                    <article class="speaker-card">
+
+                        <div class="speaker-photo">
+                            AS
+                        </div>
+
+                        <h3>
+                            Ana Souza
+                        </h3>
+
+                        <div class="speaker-role">
+                            Engenharia de Software
+                        </div>
+
+                        <p>
+                            Especialista em desenvolvimento de
+                            aplicações web e arquitetura de sistemas.
+                        </p>
+
+                    </article>
+
+
+                    <article class="speaker-card">
+
+                        <div class="speaker-photo">
+                            RM
+                        </div>
+
+                        <h3>
+                            Rafael Martins
+                        </h3>
+
+                        <div class="speaker-role">
+                            Inteligência Artificial
+                        </div>
+
+                        <p>
+                            Pesquisador de soluções de inteligência
+                            artificial aplicadas a problemas reais.
+                        </p>
+
+                    </article>
+
+
+                    <article class="speaker-card">
+
+                        <div class="speaker-photo">
+                            CL
+                        </div>
+
+                        <h3>
+                            Camila Lima
+                        </h3>
+
+                        <div class="speaker-role">
+                            Segurança da Informação
+                        </div>
+
+                        <p>
+                            Profissional da área de segurança,
+                            privacidade e proteção de dados.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             INSCRIÇÃO
+        ====================================================== -->
+
+        <section id="inscricao" class="section">
+
+            <div class="container">
+
+                <div class="registration-grid">
+
+                    <article class="registration-info">
+
+                        <div class="section-header">
+
+                            <span class="section-label">
+                                Inscrição
+                            </span>
+
+                            <h2 class="section-title">
+                                Faça parte do TechNorte.
+                            </h2>
+
+                        </div>
+
+                        <p>
+                            Preencha o formulário ao lado para
+                            demonstrar seu interesse em participar
+                            do evento.
+                        </p>
+
+                        <ul class="benefits">
+
+                            <li>
+                                Participação gratuita
+                            </li>
+
+                            <li>
+                                Acesso às palestras
+                            </li>
+
+                            <li>
+                                Participação nos workshops
+                            </li>
+
+                            <li>
+                                Certificado de participação
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <form
+                        action="#inscricao"
+                        method="post"
+                    >
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="nome">
+                                    Nome completo
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nome"
+                                    name="nome"
+                                    placeholder="Digite seu nome"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    E-mail
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="nome@email.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="telefone">
+                                    Telefone
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="telefone"
+                                    name="telefone"
+                                    placeholder="(00) 00000-0000"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="categoria">
+                                    Perfil
+                                </label>
+
+                                <select
+                                    id="categoria"
+                                    name="categoria"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Selecione
+                                    </option>
+
+                                    <option value="estudante">
+                                        Estudante
+                                    </option>
+
+                                    <option value="professor">
+                                        Professor
+                                    </option>
+
+                                    <option value="profissional">
+                                        Profissional
+                                    </option>
+
+                                    <option value="visitante">
+                                        Visitante
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group full">
+
+                                <label for="curso">
+                                    Curso ou área de atuação
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="curso"
+                                    name="curso"
+                                    placeholder="Ex.: Sistemas de Informação"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group full">
+
+                                <label for="mensagem">
+                                    Por que você quer participar?
+                                </label>
+
+                                <textarea
+                                    id="mensagem"
+                                    name="mensagem"
+                                    placeholder="Conte brevemente..."
+                                ></textarea>
+
+                            </div>
+
+
+                            <div class="checkbox-group">
+
+                                <input
+                                    type="checkbox"
+                                    id="termos"
+                                    name="termos"
+                                    required
+                                >
+
+                                <label for="termos">
+                                    Confirmo que as informações
+                                    preenchidas são verdadeiras e
+                                    concordo com o uso dos dados
+                                    exclusivamente para fins de
+                                    organização do evento.
+                                </label>
+
+                            </div>
+
+
+                            <div class="form-submit">
+
+                                <button
+                                    type="submit"
+                                    class="button button-primary"
+                                >
+                                    Enviar inscrição
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTATO
+        ====================================================== -->
+
+        <section id="contato" class="section contact">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-label">
+                        Contato
+                    </span>
+
+                    <h2 class="section-title">
+                        Precisa de ajuda?
+                    </h2>
+
+                    <p class="section-description">
+                        Entre em contato com a organização do evento.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-grid">
+
+                    <article class="contact-card">
+
+                        <strong>
+                            E-mail
+                        </strong>
+
+                        <span>
+                            contato@technorte.edu.br
+                        </span>
+
+                    </article>
+
+
+                    <article class="contact-card">
+
+                        <strong>
+                            Local
+                        </strong>
+
+                        <span>
+                            Campus universitário — UNEMAT
+                        </span>
+
+                    </article>
+
+
+                    <article class="contact-card">
+
+                        <strong>
+                            Atendimento
+                        </strong>
+
+                        <span>
+                            Segunda a sexta, das 08h às 18h
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         RODAPÉ
+    ========================================================== -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <p>
+                © 2026 TechNorte — Projeto acadêmico.
+            </p>
+
+            <div class="footer-links">
+
+                <a href="#inicio">
+                    Início
+                </a>
+
+                <a href="#sobre">
+                    Sobre
+                </a>
+
+                <a href="#programacao">
+                    Programação
+                </a>
+
+                <a href="#inscricao">
+                    Inscrição
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
